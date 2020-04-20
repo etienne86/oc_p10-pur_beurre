@@ -20,7 +20,12 @@ from seleniumlogin import force_login
 
 from auth.models import MyUser
 from off_sub.models import Product, Category
-from pur_beurre.settings import BASE_DIR
+# from pur_beurre.settings import BASE_DIR
+
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(
+    os.path.abspath(__file__)
+)))
 
 
 class TestWithAnonymousUser(StaticLiveServerTestCase):
