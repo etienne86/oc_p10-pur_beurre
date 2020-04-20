@@ -7,6 +7,7 @@ from .models import Product
 
 @login_required
 def favorites(request):
+    BUG
     context = {}
     context['user_favorites'] = request.user.favorites.all()  # QuerySet
     context['products_list'] = context['user_favorites']
