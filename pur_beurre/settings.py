@@ -14,9 +14,6 @@ import os
 
 from django.urls import reverse_lazy
 
-if os.environ.get('ENV') == 'PRODUCTION':
-    import django_heroku
-
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -36,7 +33,7 @@ else:
 
 
 if os.environ.get('ENV') == 'PRODUCTION':
-    ALLOWED_HOSTS = ['purbeurre-etienne86.herokuapp.com']
+    ALLOWED_HOSTS = ['178.62.10.30']
 else:
     ALLOWED_HOSTS = ['127.0.0.1']
 
@@ -84,7 +81,6 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'off_sub.context_processors.pur_beurre_all_products',
                 'off_sub.context_processors.pur_beurre_user_authenticated',
-
             ],
         },
     },
@@ -173,7 +169,3 @@ if os.environ.get('ENV') == 'PRODUCTION':
     # Static files (CSS, JavaScript, Images)
     # https://docs.djangoproject.com/en/3.0/howto/static-files/
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-if os.environ.get('ENV') == 'PRODUCTION':
-    # Activate Django-Heroku
-    django_heroku.settings(locals())
