@@ -26,16 +26,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'nidgb+ve7tvhd7e^vj0vttx^!2a^5w@*l$5!o&&m7i*gz@a=mm'  # for dev
 
 # SECURITY WARNING: don't run with debug turned on in production!
-if os.environ.get('ENV') == 'PRODUCTION':
-    DEBUG = False
-else:
-    DEBUG = True
+DEBUG = True
 
 
-if os.environ.get('ENV') == 'PRODUCTION':
-    ALLOWED_HOSTS = ['178.62.10.30']
-else:
-    ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['']
 
 
 # Application definition
@@ -92,28 +86,16 @@ SITE_ID = 1
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-if os.environ.get('ENV') == 'PRODUCTION':
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'pur_beurre_db',
-            'USER': 'ebarbier',
-            'PASSWORD': 'etienneb',
-            'HOST': '',
-            'PORT': '5432',
-        }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'pur_beurre_db',
+        'USER': 'ebarbier',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': '5432',
     }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'pur_beurre_db',
-            'USER': 'ebarbier',
-            'PASSWORD': '',
-            'HOST': '',
-            'PORT': '5432',
-        }
-    }
+}
 
 
 # Authentication
@@ -165,7 +147,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-if os.environ.get('ENV') == 'PRODUCTION':
-    # Static files (CSS, JavaScript, Images)
-    # https://docs.djangoproject.com/en/3.0/howto/static-files/
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/3.0/howto/static-files/
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
