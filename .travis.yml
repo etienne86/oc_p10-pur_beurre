@@ -9,7 +9,7 @@ branches:
 
 env:
   - DJANGO_SETTINGS_MODULE=pur_beurre.settings.travis
-  # - MOZ_HEADLESS=1
+  - MOZ_HEADLESS=1
 
 addons:
   firefox: latest
@@ -17,17 +17,11 @@ addons:
     packages:
       firefox-geckodriver
 
-before_install:
-  # - wget https://github.com/mozilla/geckodriver/releases/download/v0.26.0/geckodriver-v0.26.0-linux64.tar.gz
-  # - mkdir geckodriver
-  # - tar -xzf geckodriver-v0.26.0-linux64.tar.gz -C geckodriver
-  # - export PATH=$PATH:$PWD/geckodriver
-  # - geckodriver --version
-  - export MOZ_HEADLESS=1
+# before_install:
+#   - export MOZ_HEADLESS=1
 
 install:
   - pip install -r requirements.txt
-  # - psql -c 'create database travis_ci_test;' -U postgres
 
 services:
   - postgresql
