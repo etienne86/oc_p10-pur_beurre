@@ -9,11 +9,6 @@ branches:
 
 env: DJANGO_SETTINGS_MODULE=pur_beurre.settings.travis
 
-# env:
-#   global:
-#     - DJANGO_SETTINGS_MODULE=pur_beurre.settings.travis
-#     - MOZ_HEADLESS=1
-
 addons:
   firefox: latest
   apt:
