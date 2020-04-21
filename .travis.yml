@@ -14,7 +14,7 @@ services:
   - postgresql
 
 env:
-  - DJANGO_SETTINGS_MODULE="pur_beurre.settings.travis"
+  - DJANGO_SETTINGS_MODULE=pur_beurre.settings.travis
   - MOZ_HEADLESS=1
 
 script:
