@@ -20,12 +20,6 @@ from seleniumlogin import force_login
 
 from auth.models import MyUser
 from off_sub.models import Product, Category
-# from pur_beurre.settings import BASE_DIR
-
-
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(
-    os.path.abspath(__file__)
-)))
 
 
 class TestWithAnonymousUser(StaticLiveServerTestCase):
@@ -38,11 +32,7 @@ class TestWithAnonymousUser(StaticLiveServerTestCase):
     def setUpClass(cls):
         super().setUpClass()
         # initialize a webdriver
-        cls.selenium = WebDriver(
-            executable_path=os.path.join(
-                BASE_DIR, 'drivers/geckodriver'
-            )
-        )
+        cls.selenium = WebDriver()
         cls.selenium.maximize_window()
         # set home_url
         cls.home_url = f"{cls.live_server_url}/"
@@ -775,11 +765,7 @@ class TestWithAuthenticatedUser(StaticLiveServerTestCase):
     def setUpClass(cls):
         super().setUpClass()
         # initialize a webdriver
-        cls.selenium = WebDriver(
-            executable_path=os.path.join(
-                BASE_DIR, 'drivers/geckodriver'
-            )
-        )
+        cls.selenium = WebDriver()
         cls.selenium.maximize_window()
         # set home_url
         cls.home_url = f"{cls.live_server_url}/"
