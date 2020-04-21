@@ -13,13 +13,13 @@ before_script:
 services:
   - postgresql
 
-env: DJANGO_SETTINGS_MODULE="pur_beurre.settings.travis"
+env:
+  - DJANGO_SETTINGS_MODULE="pur_beurre.settings.travis"
+  - MOZ_HEADLESS=1
 
 script:
   - ./manage.py test
 
 addons:
-  chrome: stable 
-  firefox: latest 
-env: 
-  - MOZ_HEADLESS=1
+  chrome: stable
+  firefox: latest
