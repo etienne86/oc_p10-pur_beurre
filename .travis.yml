@@ -8,8 +8,8 @@ branches:
     - staging
 
 env:
-  - DJANGO_SETTINGS_MODULE=pur_beurre.settings.travis
   - MOZ_HEADLESS=1
+  - DJANGO_SETTINGS_MODULE=pur_beurre.settings.travis
 
 addons:
   firefox: latest
@@ -28,5 +28,3 @@ services:
 
 script:
   - ./manage.py test
-
-  
