@@ -17,3 +17,9 @@ env: DJANGO_SETTINGS_MODULE="pur_beurre.settings.travis"
 
 script:
   - ./manage.py test
+
+addons:
+  chrome: stable 
+  firefox: latest 
+env: 
+  - MOZ_HEADLESS=1
