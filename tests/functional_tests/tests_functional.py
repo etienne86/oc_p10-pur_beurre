@@ -4,7 +4,6 @@ This module contains the functional tests for the project, using two classes:
 - TestWithAuthenticatedUser, where a user is initially logged in
 """
 
-import os
 import random
 
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
