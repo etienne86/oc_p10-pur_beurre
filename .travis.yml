@@ -7,16 +7,16 @@ branches:
   only:
     - staging
 
-env: DJANGO_SETTINGS_MODULE=pur_beurre.settings.travis
+env:
+  global:
+    - DJANGO_SETTINGS_MODULE=pur_beurre.settings.travis
+    - MOZ_HEADLESS=1
 
 addons:
   firefox: latest
   apt:
     packages:
       firefox-geckodriver
-
-before_install:
-  - export MOZ_HEADLESS=1
 
 install:
   - pip install -r requirements.txt
