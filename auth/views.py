@@ -1,3 +1,5 @@
+import logging
+
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.db import transaction
@@ -5,6 +7,9 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 
 from .forms import UserCreationForm, AuthenticationForm
+
+
+logger = logging.getLogger(__name__)
 
 
 @login_required
@@ -39,6 +44,7 @@ def sign(request):
             user_creation_form.save()
             email = user_creation_form.cleaned_data['email']
             password = user_creation_form.cleaned_data['password1']
+            logger.info("Création du compte %s", email)
         if authentication_form.is_valid():
             email = authentication_form.cleaned_data['email']
             password = authentication_form.cleaned_data['password']
