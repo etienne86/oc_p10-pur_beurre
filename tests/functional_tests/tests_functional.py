@@ -197,7 +197,7 @@ class TestWithAnonymousUser(StaticLiveServerTestCase):
         # wait for page loading
         WebDriverWait(
             self.selenium,
-            timeout=2
+            timeout=10
         ).until(url_changes(self.home_url))
         # see "results" page
         product_id = self.product_a.id
@@ -228,7 +228,7 @@ class TestWithAnonymousUser(StaticLiveServerTestCase):
         # wait for page loading
         WebDriverWait(
             self.selenium,
-            timeout=2
+            timeout=10
         ).until(url_changes(self.home_url))
         # see "results" page
         product_id = self.product_a.id
@@ -256,7 +256,7 @@ class TestWithAnonymousUser(StaticLiveServerTestCase):
         # wait for page loading
         WebDriverWait(
             self.selenium,
-            timeout=2
+            timeout=10
         ).until(url_changes(self.home_url))
         # see "results" page
         product_id = self.product_a.id
@@ -298,7 +298,7 @@ class TestWithAnonymousUser(StaticLiveServerTestCase):
         # wait for page loading
         WebDriverWait(
             self.selenium,
-            timeout=2
+            timeout=10
         ).until(url_changes(self.home_url))
         # see "results" page
         product_id = self.product_a.id
@@ -320,7 +320,7 @@ class TestWithAnonymousUser(StaticLiveServerTestCase):
         # wait for page loading
         WebDriverWait(
             self.selenium,
-            timeout=2
+            timeout=10
         ).until(url_changes(start_url))
         # see "food" page
         expected_url = f"{self.live_server_url}/food/" + \
@@ -344,7 +344,7 @@ class TestWithAnonymousUser(StaticLiveServerTestCase):
         # wait for page loading
         WebDriverWait(
             self.selenium,
-            timeout=2
+            timeout=10
         ).until(url_changes(start_url))
         # see "food" page
         expected_url = f"{self.live_server_url}/food/" + \
@@ -364,7 +364,7 @@ class TestWithAnonymousUser(StaticLiveServerTestCase):
         # wait for page loading
         WebDriverWait(
             self.selenium,
-            timeout=2
+            timeout=10
         ).until(url_changes(f"{self.live_server_url}/"))
         # select the tab "Nous rejoindre"
         signup_tab = self.selenium.find_element_by_id("nous-rejoindre")
@@ -377,7 +377,7 @@ class TestWithAnonymousUser(StaticLiveServerTestCase):
         submit_button = self.selenium.find_element_by_name("sign_up_form")
         WebDriverWait(
             self.selenium,
-            timeout=2
+            timeout=10
         ).until(visibility_of(submit_button))
         # start chained actions
         actions = ActionChains(self.selenium)
@@ -401,7 +401,7 @@ class TestWithAnonymousUser(StaticLiveServerTestCase):
         # wait for page loading
         WebDriverWait(
             self.selenium,
-            timeout=2
+            timeout=10
         ).until(url_changes(f"{self.live_server_url}/auth/sign/"))
         # redirect to home page: True or False?
         home_sweet_home = (self.selenium.current_url == start_url)
@@ -428,7 +428,7 @@ class TestWithAnonymousUser(StaticLiveServerTestCase):
         # wait for page loading
         WebDriverWait(
             self.selenium,
-            timeout=2
+            timeout=10
         ).until(url_changes(f"{self.live_server_url}/"))
         # select the tab "Nous rejoindre"
         signup_tab = self.selenium.find_element_by_id("nous-rejoindre")
@@ -441,7 +441,7 @@ class TestWithAnonymousUser(StaticLiveServerTestCase):
         submit_button = self.selenium.find_element_by_name("sign_up_form")
         WebDriverWait(
             self.selenium,
-            timeout=2
+            timeout=10
         ).until(visibility_of(submit_button))
         # start chained actions
         actions = ActionChains(self.selenium)
@@ -485,7 +485,7 @@ class TestWithAnonymousUser(StaticLiveServerTestCase):
         # wait for page loading
         WebDriverWait(
             self.selenium,
-            timeout=2
+            timeout=10
         ).until(url_changes(f"{self.live_server_url}/"))
         # select the tab "Nous rejoindre"
         signup_tab = self.selenium.find_element_by_id("nous-rejoindre")
@@ -498,7 +498,7 @@ class TestWithAnonymousUser(StaticLiveServerTestCase):
         submit_button = self.selenium.find_element_by_name("sign_up_form")
         WebDriverWait(
             self.selenium,
-            timeout=2
+            timeout=10
         ).until(visibility_of(submit_button))
         # start chained actions
         actions = ActionChains(self.selenium)
@@ -542,7 +542,7 @@ class TestWithAnonymousUser(StaticLiveServerTestCase):
         # wait for page loading
         WebDriverWait(
             self.selenium,
-            timeout=2
+            timeout=10
         ).until(url_changes(f"{self.live_server_url}/"))
         # select the tab "Se connecter"
         login_tab = self.selenium.find_element_by_id("se-connecter")
@@ -555,7 +555,7 @@ class TestWithAnonymousUser(StaticLiveServerTestCase):
         submit_button = self.selenium.find_element_by_name("login_form")
         WebDriverWait(
             self.selenium,
-            timeout=2
+            timeout=10
         ).until(visibility_of(submit_button))
         # start chained actions
         actions = ActionChains(self.selenium)
@@ -573,7 +573,7 @@ class TestWithAnonymousUser(StaticLiveServerTestCase):
         # wait for page loading
         WebDriverWait(
             self.selenium,
-            timeout=2
+            timeout=10
         ).until(url_changes(f"{self.live_server_url}/auth/sign/"))
         # redirect to home page: True or False?
         home_sweet_home = (self.selenium.current_url == start_url)
@@ -600,7 +600,7 @@ class TestWithAnonymousUser(StaticLiveServerTestCase):
         # wait for page loading
         WebDriverWait(
             self.selenium,
-            timeout=2
+            timeout=10
         ).until(url_changes(f"{self.live_server_url}/"))
         # select the tab "Se connecter"
         login_tab = self.selenium.find_element_by_id("se-connecter")
@@ -613,7 +613,7 @@ class TestWithAnonymousUser(StaticLiveServerTestCase):
         submit_button = self.selenium.find_element_by_name("login_form")
         WebDriverWait(
             self.selenium,
-            timeout=2
+            timeout=10
         ).until(visibility_of(submit_button))
         # start chained actions
         actions = ActionChains(self.selenium)
@@ -655,7 +655,7 @@ class TestWithAnonymousUser(StaticLiveServerTestCase):
         # wait for page loading
         WebDriverWait(
             self.selenium,
-            timeout=2
+            timeout=10
         ).until(url_changes(f"{self.live_server_url}/"))
         # select the tab "Se connecter"
         login_tab = self.selenium.find_element_by_id("se-connecter")
@@ -668,7 +668,7 @@ class TestWithAnonymousUser(StaticLiveServerTestCase):
         submit_button = self.selenium.find_element_by_name("login_form")
         WebDriverWait(
             self.selenium,
-            timeout=2
+            timeout=10
         ).until(visibility_of(submit_button))
         # start chained actions
         actions = ActionChains(self.selenium)
@@ -707,7 +707,7 @@ class TestWithAnonymousUser(StaticLiveServerTestCase):
         # wait for page loading
         WebDriverWait(
             self.selenium,
-            timeout=2
+            timeout=10
         ).until(url_changes(start_url))
         # select the tab "Se connecter"
         login_tab = self.selenium.find_element_by_id("se-connecter")
@@ -720,7 +720,7 @@ class TestWithAnonymousUser(StaticLiveServerTestCase):
         submit_button = self.selenium.find_element_by_name("login_form")
         WebDriverWait(
             self.selenium,
-            timeout=2
+            timeout=10
         ).until(visibility_of(submit_button))
         # start chained actions
         actions = ActionChains(self.selenium)
@@ -738,7 +738,7 @@ class TestWithAnonymousUser(StaticLiveServerTestCase):
         # wait for page loading
         WebDriverWait(
             self.selenium,
-            timeout=2
+            timeout=10
         ).until(url_to_be(f"{self.live_server_url}/results_/{product_id}"))
         # redirect to results page: True or False?
         results_url = f"{self.live_server_url}/results_/{product_id}"
@@ -906,7 +906,7 @@ class TestWithAuthenticatedUser(StaticLiveServerTestCase):
         # wait for page loading
         WebDriverWait(
             self.selenium,
-            timeout=2
+            timeout=10
         ).until(url_changes(start_url))
         # see "logout" page
         expected_url = f"{self.live_server_url}/auth/log_out/"
@@ -967,7 +967,7 @@ class TestWithAuthenticatedUser(StaticLiveServerTestCase):
             # wait for page loading
             WebDriverWait(
                 self.selenium,
-                timeout=2
+                timeout=10
             ).until(url_changes(start_url))
             expected_url = f"{self.live_server_url}/favorites/"
             redirect_status = (expected_url == self.selenium.current_url)
@@ -1075,7 +1075,7 @@ class TestWithAuthenticatedUser(StaticLiveServerTestCase):
             # wait for page loading
             WebDriverWait(
                 self.selenium,
-                timeout=2
+                timeout=10
             ).until(url_changes(start_url))
             expected_url = f"{self.live_server_url}/favorites/"
             redirect_status = (expected_url == self.selenium.current_url)
@@ -1113,7 +1113,7 @@ class TestWithAuthenticatedUser(StaticLiveServerTestCase):
         # wait for page loading
         WebDriverWait(
             self.selenium,
-            timeout=2
+            timeout=10
         ).until(url_changes(start_url))
         expected_url = f"{self.live_server_url}/favorites/"
         self.assertEqual(self.selenium.current_url, expected_url)
@@ -1146,7 +1146,7 @@ class TestWithAuthenticatedUser(StaticLiveServerTestCase):
             legal_link = self.selenium.find_element_by_id("legal-footer")
             WebDriverWait(
                 self.selenium,
-                timeout=2
+                timeout=10
             ).until(visibility_of(legal_link))
             # randomly choose a favorite
             index = random.randint(0, saved_quantity - 1)
@@ -1237,7 +1237,7 @@ class TestWithAuthenticatedUser(StaticLiveServerTestCase):
             legal_link = self.selenium.find_element_by_id("legal-footer")
             WebDriverWait(
                 self.selenium,
-                timeout=2
+                timeout=10
             ).until(visibility_of(legal_link))
             # randomly choose a favorite
             index = random.randint(0, saved_quantity - 1)
@@ -1333,7 +1333,7 @@ class TestWithAuthenticatedUser(StaticLiveServerTestCase):
         # wait for page loading
         WebDriverWait(
             self.selenium,
-            timeout=2
+            timeout=10
         ).until(url_changes(start_url))
         expected_url = f"{self.live_server_url}/auth/account/"
         self.assertEqual(self.selenium.current_url, expected_url)
@@ -1353,14 +1353,14 @@ class TestWithAuthenticatedUser(StaticLiveServerTestCase):
         legal_link = self.selenium.find_element_by_id("legal-footer")
         WebDriverWait(
             self.selenium,
-            timeout=2
+            timeout=10
         ).until(visibility_of(legal_link))
         # click on the "Mentions légales" link
         legal_link.click()
         # wait for page loading
         WebDriverWait(
             self.selenium,
-            timeout=2
+            timeout=10
         ).until(url_changes(start_url))
         expected_url = f"{self.live_server_url}/legal/"
         self.assertEqual(self.selenium.current_url, expected_url)
