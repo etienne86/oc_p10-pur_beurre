@@ -10,6 +10,7 @@ from .forms import UserCreationForm, AuthenticationForm
 
 
 logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
 
 
 @login_required
