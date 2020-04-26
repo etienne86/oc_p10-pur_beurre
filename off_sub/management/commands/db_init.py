@@ -1,5 +1,5 @@
 """
-Please execute this module first, with "manage.py",
+This command is executed first, with 'manage.py',
 to build and fill in the database 'pur_beurre_db'.
 Pre-requisite: the database 'pur_beurre_db' has to be created.
 """
@@ -17,7 +17,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         self.stdout.write(self.style.WARNING(
-            "Installation en cours, veuillez patienter SVP..."
+            "Initialisation de la base de données, veuillez patienter SVP..."
         ))
         # fill in the database tables with products, categories and stores
         # iterate on each pre-selected category
@@ -87,7 +87,7 @@ class Command(BaseCommand):
                             shop.add_store_to_db()
                             # update the database (table ProductStore)
                             prod.add_product_store_to_db(shop)
-        self.stdout.write(self.style.SUCCESS("Installation terminée !"))
+        self.stdout.write(self.style.SUCCESS("Initialisation terminée !"))
 
 
 # function called in the method 'Command.handle'
