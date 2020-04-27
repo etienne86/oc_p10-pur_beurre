@@ -137,3 +137,56 @@ class Product(models.Model):
         prods_qs = prods_qs.order_by('nutriscore_score')
         # get the 'nb_sub' best subs
         return prods_qs[:nb_sub]
+
+    def update_fields(self, fields_dict):
+        """
+        Update the product fields based on the given dict 'fields_dict'.
+        The dict 'fields_dict' contains all keys (CSV file with full database).
+        """
+        self.product_name = fields_dict["product_name"]
+        # try:
+        #     self.product_name = fields_dict["product_name"]
+        # except KeyError:
+        #     self.product_name = "[Produit sans nom]"
+        self.nutriscore_grade = fields_dict["nutriscore_grade"]
+        self.nutriscore_score = \
+            int(fields_dict["nutriscore_score"])
+        self.url = fields_dict["url"]
+        # try:
+        #     self.url = fields_dict["url"]
+        # except KeyError:
+        #     self.url = ""
+        self.image_url = fields_dict["image_url"]
+        # try:
+        #     self.image_url = fields_dict["image_url"]
+        # except KeyError:
+        #     self.image_url = ""
+        self.fat = str(fields_dict["fat_value"]) + \
+                            max(fields_dict["fat_unit"], "g")
+        # try:
+        #     self.fat = str(fields_dict["fat_value"]) + \
+        #                     max(fields_dict["fat_unit"], "g")
+        # except KeyError:
+        #     self.fat = "donnée inconnue"
+        self.saturated_fat = str(fields_dict["saturated-fat_value"]) + \
+                            max(fields_dict["saturated-fat_unit"], "g")
+        # try:
+        #     self.saturated_fat = str(fields_dict["saturated-fat_value"]) + \
+        #                     max(fields_dict["saturated-fat_unit"], "g")
+        # except KeyError:
+        #     self.saturated_fat = "donnée inconnue"
+        self.sugars = str(fields_dict["sugars_value"]) + \
+                            max(fields_dict["sugars_unit"], "g")
+        # try:
+        #     self.sugars = str(fields_dict["sugars_value"]) + \
+        #                     max(fields_dict["sugars_unit"], "g")
+        # except KeyError:
+        #     self.sugars = "donnée inconnue"
+        self.salt = str(fields_dict["salt_value"]) + \
+                            max(fields_dict["salt_unit"], "g")
+        # try:
+        #     self.salt = str(fields_dict["salt_value"]) + \
+        #                     max(fields_dict["salt_unit"], "g")
+        # except KeyError:
+        #     self.salt = "donnée inconnue"
+        self.save()
