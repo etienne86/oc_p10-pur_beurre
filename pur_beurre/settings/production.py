@@ -14,7 +14,8 @@ sentry_logging = LoggingIntegration(
 )
 
 sentry_sdk.init(
-    dsn="https://c42d683c1779454f9b50c0e420af723a@o380264.ingest.sentry.io/5205889",
+    dsn="https://c42d683c1779454f9b50c0e420af723a@o380264.ingest.sentry.io"
+        "/5205889",
     integrations=[DjangoIntegration(), sentry_logging],
 
     # If you wish to associate users to errors (assuming you are using
