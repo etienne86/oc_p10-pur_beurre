@@ -20,7 +20,7 @@ class UpdateMockRequestsGet:
     def __enter__(self):
         self.file = open(os.path.join(
             os.path.dirname(os.path.abspath(__file__)),
-            'csv_db',
+            'csv_db_test',
             'test.csv'
         ), 'rU')
         return self
