@@ -1,6 +1,7 @@
 various/
 server_config/
 .vscode/
+csv_db/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

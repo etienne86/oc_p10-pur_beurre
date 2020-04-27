@@ -1,0 +1,2 @@
+code	product_name	nutriscore_grade	nutriscore_score	url	image_url	fat_value	fat_unit	saturated-fat_value	saturated-fat_unit	sugars_value	sugars_unit	salt_value	salt_unit	another_key
+1234567890123	a nice product	b	1	a_nice_url	a_nice_image_url	10	g	10	g	10	g	10	mg	another_value

@@ -159,7 +159,7 @@ class TestWithAnonymousUser(StaticLiveServerTestCase):
         # wait for page loading
         WebDriverWait(
             self.selenium,
-            timeout=10
+            timeout=30
         ).until(url_changes(start_url))
         # see "results" page
         product_id = self.product_a.id
@@ -238,7 +238,7 @@ class TestWithAuthenticatedUser(StaticLiveServerTestCase):
         # wait for page loading
         WebDriverWait(
             self.selenium,
-            timeout=10
+            timeout=30
         ).until(url_changes(start_url))
         # see "sign" page
         expected_url = f"{self.live_server_url}/auth/sign/"
@@ -257,7 +257,7 @@ class TestWithAuthenticatedUser(StaticLiveServerTestCase):
         # wait for page loading
         WebDriverWait(
             self.selenium,
-            timeout=10
+            timeout=30
         ).until(url_changes(start_url))
         # see "favorites" page
         expected_url = f"{self.live_server_url}/favorites/"
@@ -276,7 +276,7 @@ class TestWithAuthenticatedUser(StaticLiveServerTestCase):
         # wait for page loading
         WebDriverWait(
             self.selenium,
-            timeout=10
+            timeout=30
         ).until(url_changes(start_url))
         # see "logout" page
         expected_url = f"{self.live_server_url}/auth/log_out/"
@@ -295,7 +295,7 @@ class TestWithAuthenticatedUser(StaticLiveServerTestCase):
         # wait for page loading
         WebDriverWait(
             self.selenium,
-            timeout=10
+            timeout=30
         ).until(url_changes(start_url))
         # see "account" page
         expected_url = f"{self.live_server_url}/auth/account/"
@@ -314,7 +314,7 @@ class TestWithAuthenticatedUser(StaticLiveServerTestCase):
         # wait for page loading
         WebDriverWait(
             self.selenium,
-            timeout=10
+            timeout=30
         ).until(url_changes(start_url))
         # see "logout" page
         expected_url = f"{self.live_server_url}/auth/log_out/"
@@ -341,7 +341,7 @@ class TestWithAuthenticatedUser(StaticLiveServerTestCase):
         # wait for page loading
         WebDriverWait(
             self.selenium,
-            timeout=10
+            timeout=30
         ).until(url_changes(start_url))
         # see "results" page
         product_id = self.product_a.id
@@ -369,7 +369,7 @@ class TestWithAuthenticatedUser(StaticLiveServerTestCase):
         # wait for page loading
         WebDriverWait(
             self.selenium,
-            timeout=10
+            timeout=30
         ).until(url_changes(start_url))
         # see "results" page
         product_id = self.product_a.id
@@ -397,7 +397,7 @@ class TestWithAuthenticatedUser(StaticLiveServerTestCase):
         # wait for page loading
         WebDriverWait(
             self.selenium,
-            timeout=10
+            timeout=30
         ).until(url_changes(start_url))
         # see "results" page
         product_id = self.product_a.id

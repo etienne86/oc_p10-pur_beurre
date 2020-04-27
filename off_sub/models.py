@@ -137,3 +137,37 @@ class Product(models.Model):
         prods_qs = prods_qs.order_by('nutriscore_score')
         # get the 'nb_sub' best subs
         return prods_qs[:nb_sub]
+
+    def update_fields(self, fields_dict):
+        """
+        Update the product fields based on the given dict 'fields_dict'.
+        The dict 'fields_dict' contains all keys (CSV file with full database).
+        """
+        name = fields_dict["product_name"]
+        self.product_name = name if name else "[Produit sans nom]"
+        self.nutriscore_grade = fields_dict["nutriscore_grade"]
+        self.nutriscore_score = \
+            int(fields_dict["nutriscore_score"])
+        self.url = fields_dict["url"]  # "" is accepted (default)
+        self.image_url = fields_dict["image_url"]  # "" is accepted (default)
+        if fields_dict["fat_value"]:
+            self.fat = str(fields_dict["fat_value"]) + \
+                max(fields_dict["fat_unit"], "g")
+        else:
+            self.fat = "donnée inconnue"
+        if fields_dict["saturated-fat_value"]:
+            self.saturated_fat = str(fields_dict["saturated-fat_value"]) + \
+                max(fields_dict["saturated-fat_unit"], "g")
+        else:
+            self.saturated_fat = "donnée inconnue"
+        if fields_dict["sugars_value"]:
+            self.sugars = str(fields_dict["sugars_value"]) + \
+                max(fields_dict["sugars_unit"], "g")
+        else:
+            self.sugars = "donnée inconnue"
+        if fields_dict["salt_value"]:
+            self.salt = str(fields_dict["salt_value"]) + \
+                max(fields_dict["salt_unit"], "g")
+        else:
+            self.salt = "donnée inconnue"
+        self.save()
