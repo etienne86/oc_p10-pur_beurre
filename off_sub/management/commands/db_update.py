@@ -12,7 +12,7 @@ import django
 from django.shortcuts import get_object_or_404
 from django.core.management.base import BaseCommand
 
-from off_sub.models import Category, Product, Store
+from off_sub.models import Product
 
 
 class Command(BaseCommand):
