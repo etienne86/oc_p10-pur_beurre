@@ -1,4 +1,4 @@
-# oc_p10_pur_beurre
+# oc_p10-pur_beurre
 
 Project #10 in OC Python course
 
@@ -6,11 +6,11 @@ Author: etienne86
 
 ## Purpose
 
-Based on the [project #08](https://github.com/etienne86/oc_p08_pur_beurre), the purpose is here to deploy the web application on a server setup manually.
+Based on the [project #08](https://github.com/etienne86/oc_p08_pur_beurre), the purpose is to deploy the web application on a server setup manually.
 
 ## Main features
 
-The features added in this repository (versus [oc_p08_pur_beurre](https://github.com/etienne86/oc_p08_pur_beurre) are:
+The features added in this repository (versus [oc_p08_pur_beurre](https://github.com/etienne86/oc_p08_pur_beurre)) are:
 * from your machine, push the changes on branch 'staging' to pass the Travis approval - if OK:
     * git checkout master
     * git merge staging
