@@ -6,6 +6,7 @@ Pre-requisite: the command 'db_init' has to be executed initially.
 
 import csv
 import codecs
+import datetime
 
 import requests
 import django
@@ -20,6 +21,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         self.stdout.write(self.style.WARNING(
+            f"{datetime.datetime.now().isoformat(' ', 'seconds')} [info] "
             "Mise à jour de la base de données, veuillez patienter SVP..."
         ))
         url = "https://static.openfoodfacts.org/data/" \
@@ -40,4 +42,6 @@ class Command(BaseCommand):
                 except django.http.response.Http404:
                     pass
         self.stdout.write(self.style.SUCCESS(
-            f"Tâche terminée : {counter} produit(s) mis à jour !"))
+            f"{datetime.datetime.now().isoformat(' ', 'seconds')} [info] "
+            f"Tâche terminée : {counter} produit(s) mis à jour !"
+        ))

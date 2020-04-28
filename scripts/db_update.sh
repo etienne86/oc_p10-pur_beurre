@@ -1,3 +1,1 @@
-cd /home/ebarbier/pur_beurre
-source venv/bin/activate
-/home/ebarbier/pur_beurre/venv/bin/python manage.py db_update
+/home/ebarbier/pur_beurre/venv/bin/python3 /home/ebarbier/pur_beurre/manage.py db_update
